@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    body {
+      margin: auto;
+    }
+    .main {
+      margin: auto;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 200px;
+      height: 250px;
+      justify-content: space-between;
+      padding: 10px;
+    }
+
+    .bottom-div {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      height: 50px;
+      align-items: center;
+    }
+    .top-div {
+      flex: 1;
+      position: relative;
+      width: 200px;
+    }
+
+    .pill {
+      height: 50px;
+      border-radius: 25px;
+      width: 50px;
+      position: absolute;
+      transition: width 0.6s ease-in-out, opacity 0.7s ease-in-out,
+        background 1s ease-in-out;
+    }
+    #pill1,
+    #pill5 {
+      background-color: #7abdaa;
+      transition: width 0.6s ease-in-out, opacity 0.7s ease-in-out,
+        background 1s ease-in-out;
+      left: 0;
+      top: 0;
+    }
+    #pill2 {
+      background-color: #7f2347;
+      transition: height 0.6s ease-in-out, opacity 0.7s ease-in-out,
+        background 1s ease-in-out;
+      right: 0;
+      top: 0;
+    }
+    #pill3 {
+      background-color: #aeab65;
+      transition: height 0.6s ease-in-out, opacity 0.7s ease-in-out,
+        background 1s ease-in-out;
+      left: 0;
+      bottom: 0;
+    }
+    #pill4 {
+      background-color: #8c87ba;
+      transition: width 0.6s ease-in-out, opacity 0.7s ease-in-out,
+        background 1s ease-in-out;
+      right: 0;
+      bottom: 0;
+    }
+  </style>
+  <body>
+    <div class="main">
+      <div class="top-div">
+        <div class="pill" id="pill1"></div>
+        <div class="pill" id="pill2"></div>
+
+        <div class="pill" id="pill4"></div>
+        <div class="pill" id="pill3"></div>
+        <div class="pill" id="pill5"></div>
+      </div>
+      <div class="bottom-div">
+        <div>
+          <button id="but" onClick="myLoop()">Start</button>
+        </div>
+        <div>
+          <input type="button" value="Stop" onClick="closeLoop()" />
+        </div>
+      </div>
+    </div>
+    <script>
+      var but = document.querySelector("#but");
+      var pill = document.querySelector(".pill");
+
+      var i = 0;
+      var k = 0;
+      var loop;
+      function myLoop() {
+        loop = setInterval(function () {
+          console.log("hello");
+
+          if (i < 1000) {
+            if (i % 8 == 0) {
+              pill1.style.width = "200px";
+              pill1.style.background = "#7f2347";
+              pill5.style.width = "150px";
+              pill5.style.background = "#7f2347";
+              pill2.style.height = "200px";
+              pill2.style.background = "#8c87ba";
+              pill3.style.height = "200px";
+              pill3.style.background = "#7abdaa";
+              pill4.style.width = "200px";
+              pill4.style.background = "#aeab65";
+            } else if (i % 8 == 1) {
+              pill1.style.width = "50px";
+              pill1.style.background = "#7f2347";
+              pill5.style.width = "50px";
+              pill5.style.background = "#7f2347";
+              pill2.style.height = "50px";
+              pill2.style.background = "#8c87ba";
+              pill3.style.height = "50px";
+              pill3.style.background = "#7abdaa";
+              pill4.style.width = "50px";
+              pill4.style.background = "#aeab65";
+            } else if (i % 8 == 2) {
+              pill1.style.width = "200px";
+              pill1.style.background = "#8c87ba";
+              pill5.style.width = "150px";
+              pill5.style.background = "#8c87ba";
+              pill2.style.height = "200px";
+              pill2.style.background = "#aeab65";
+              pill3.style.height = "200px";
+              pill3.style.background = "#7f2347";
+              pill4.style.width = "200px";
+              pill4.style.background = "#7abdaa";
+            } else if (i % 8 == 3) {
+              pill1.style.width = "50px";
+              pill1.style.background = "#8c87ba";
+              pill5.style.width = "50px";
+              pill5.style.background = "#8c87ba";
+              pill2.style.height = "50px";
+              pill2.style.background = "#aeab65";
+              pill3.style.height = "50px";
+              pill3.style.background = "#7f2347";
+              pill4.style.width = "50px";
+              pill4.style.background = "#7abdaa";
+            } else if (i % 8 == 4) {
+              pill1.style.width = "200px";
+              pill1.style.background = "#aeab65";
+              pill5.style.width = "150px";
+              pill5.style.background = "#aeab65";
+              pill2.style.height = "200px";
+              pill2.style.background = "#7abdaa";
+              pill3.style.height = "200px";
+              pill3.style.background = "#8c87ba";
+              pill4.style.width = "200px";
+              pill4.style.background = "#7f2347";
+            } else if (i % 8 == 5) {
+              pill1.style.width = "50px";
+              pill1.style.background = "#aeab65";
+              pill5.style.width = "50px";
+              pill5.style.background = "#aeab65";
+              pill2.style.height = "50px";
+              pill2.style.background = "#7abdaa";
+              pill3.style.height = "50px";
+              pill3.style.background = "#8c87ba";
+              pill4.style.width = "50px";
+              pill4.style.background = "#7f2347";
+            } else if (i % 8 == 6) {
+              pill1.style.width = "200px";
+              pill1.style.background = "#7abdaa";
+              pill5.style.width = "150px";
+              pill5.style.background = "#7abdaa";
+              pill2.style.height = "200px";
+              pill2.style.background = "#7f2347";
+              pill3.style.height = "200px";
+              pill3.style.background = "#aeab65";
+              pill4.style.width = "200px";
+              pill4.style.background = "#8c87ba";
+            } else if (i % 8 == 7) {
+              pill1.style.width = "50px";
+              pill1.style.background = "#7abdaa";
+              pill5.style.width = "50px";
+              pill5.style.background = "#7abdaa";
+              pill2.style.height = "50px";
+              pill2.style.background = "#7f2347";
+              pill3.style.height = "50px";
+              pill3.style.background = "#aeab65";
+              pill4.style.width = "50px";
+              pill4.style.background = "#8c87ba";
+            }
+            i++;
+          }
+        }, 1000);
+      }
+      function closeLoop() {
+        clearInterval(loop);
+      }
+    </script>
+  </body>
+</html>
